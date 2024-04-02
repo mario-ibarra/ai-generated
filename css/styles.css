@@ -41,6 +41,7 @@ a {
 }
 
 .header {
+  max-width: 1200px;
   color: #fff;
   padding: 10px 0px;
   display: flex;
