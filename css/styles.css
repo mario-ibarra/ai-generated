@@ -185,9 +185,8 @@ a {
 .about {
   max-width: 900px;
   margin: 0 auto;
-
-
 }
+
 .about__title {
   text-align: center;
   font-size: 2rem;
