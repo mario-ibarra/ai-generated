@@ -1,0 +1,24 @@
+
+
+.show__final{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.left {
+  width: 400px;
+  
+}
+
+.left img{
+  width: 100%;
+}
+
+.right{
+    font-family: 'Fira Sans', sans-serif;
+}
