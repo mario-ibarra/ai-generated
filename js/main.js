@@ -6,7 +6,8 @@ async function fetchImageInfo() {
   try {
     const response = await fetch('image_info.json');
     const data = await response.json();
-    return data;
+    const reversedData = data.reverse()
+    return reversedData;
   } catch (error) {
     console.error('Error fetching image information:', error);
     return [];
