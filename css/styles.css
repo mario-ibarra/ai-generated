@@ -182,6 +182,9 @@ a {
   z-index: 1000;
 }
 
+.images__info-paragraph span {
+  margin-top: 1.8rem;
+}
 /*About page Styles */
 .about {
   max-width: 900px;

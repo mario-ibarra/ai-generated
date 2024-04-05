@@ -1,7 +1,4 @@
-
-
-.show__final{
- 
+.show__final {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,13 +9,24 @@
 
 .left {
   width: 400px;
-  
 }
 
-.left img{
+.left img {
   width: 100%;
 }
 
-.right{
-    font-family: 'Fira Sans', sans-serif;
+.right {
+  font-family: 'Fira Sans', sans-serif;
+}
+.back__home {
+  text-align: center;
+}
+
+.back__home a {
+  font-family: 'Fira Sans', sans-serif;
+  color: lightblue;
+}
+.back__home a:hover {
+  color: white;
+  text-decoration: underline;
 }
