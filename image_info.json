@@ -135,17 +135,27 @@
   {
     "filename": "img26.png",
     "title": "Fire of Peace",    
-    "description": "Ref.: 524"
+    "description": "Ref.: 526"
   },
   {
     "filename": "img27.png",
     "title": "Relaxing Shapes",    
-    "description": "Ref.: 524"
+    "description": "Ref.: 527"
   },
   {
     "filename": "img28.png",
     "title": "Whimsical Cityscape",    
-    "description": "Ref.: 524"
+    "description": "Ref.: 528"
+  },
+  {
+    "filename": "img29.png",
+    "title": "Modern Last Supper",    
+    "description": "Ref.: 529"
+  },
+  {
+    "filename": "img30.png",
+    "title": "Friendly Apes",    
+    "description": "Ref.: 530"
   }
  
 ]
