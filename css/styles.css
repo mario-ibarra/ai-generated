@@ -209,6 +209,17 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.margin-bottom {
+  font-family: 'Fira Sans', sans-serif;
+  color:#9872ff
+  font-weight: 700;
+  font-style: bold;
+  font-size: 1.6rem;
+  text-align: left;
+  margin-top: 1rem;
+  padding: 1rem 0 0.5rem 0;
+}
+
 @media only screen and (max-width: 600px) {
   .about__title {
     font-size: 1.8rem;
