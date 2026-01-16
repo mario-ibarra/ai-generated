@@ -7,29 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault()
 
     const formData = new FormData(form)
-    let item
-    for (item of formData) {
-      console.log(item[0], item[1])
-    }
 
-    fetch('https://httpbin.org/post', {
+    fetch('https://formsubmit.io/send/46cacb66-cf8d-489e-8906-803dfc5ceb5e', {
       method: 'POST',
       body: formData,
       headers: {
         Accept: 'application/json',
       },
     })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
       .then((response) => {
-        status.textContent = 'Your message was send succesfully.'
+        if (response.ok) {
+          return response.json()
+        }
+        throw new Error('Form submission failed')
+      })
+      .then((data) => {
+        status.textContent = 'Your message was sent successfully!'
+        status.style.color = '#4CAF50'
         form.reset()
         setTimeout(() => {
           status.textContent = ''
-        }, 3000)
+        }, 5000)
       })
       .catch((error) => {
         status.textContent = 'An error occurred while submitting the form.'
+        status.style.color = '#f44336'
         console.error(error)
       })
   })
