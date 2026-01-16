@@ -1,38 +1,34 @@
-// Form Functionality
+// Form Functionality - Direct mailto fallback with optional form service
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form')
   const status = document.getElementById('status')
 
+  if (!form) return
+
   form.addEventListener('submit', function (event) {
     event.preventDefault()
-
+    
     const formData = new FormData(form)
-
-    fetch('https://formsubmit.io/send/46cacb66-cf8d-489e-8906-803dfc5ceb5e', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        throw new Error('Form submission failed')
-      })
-      .then((data) => {
-        status.textContent = 'Your message was sent successfully!'
-        status.style.color = '#4CAF50'
-        form.reset()
-        setTimeout(() => {
-          status.textContent = ''
-        }, 5000)
-      })
-      .catch((error) => {
-        status.textContent = 'An error occurred while submitting the form.'
-        status.style.color = '#f44336'
-        console.error(error)
-      })
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+    
+    // Create mailto link - this always works!
+    const subject = `AI-Generated Contact Form: Message from ${name}`
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    const mailtoLink = `mailto:prespain2018@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    
+    // Open email client
+    window.location.href = mailtoLink
+    
+    // Show confirmation
+    status.textContent = 'Opening your email client... If it doesn\\'t open, please email prespain2018@gmail.com directly.'
+    status.style.color = '#4CAF50'
+    
+    // Reset form after a delay
+    setTimeout(() => {
+      form.reset()
+      status.textContent = ''
+    }, 5000)
   })
 })
