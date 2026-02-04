@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" class="help-page">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to use this App - AI Business Card Holder</title>
-    <link rel="stylesheet" href="policy-styles.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%) !important;
+            color: #e0e6ed !important;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.7) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.3) !important;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2) !important;
+        }
+
+        h1 {
+            color: #00d4ff !important;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #94a3b8 !important;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .nav-link {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-link a {
+            color: #00d4ff !important;
+            text-decoration: none;
+        }
+
+        .nav-link a:hover {
+            text-decoration: underline;
+        }
+
+        .feature-card {
+            background: rgba(30, 41, 59, 0.5) !important;
+            border: 1px solid rgba(0, 212, 255, 0.2) !important;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 212, 255, 0.5) !important;
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .feature-title {
+            color: #00d4ff !important;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .feature-text {
+            color: #cbd5e1 !important;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
         /* Tab styles */
         .tabs {
             display: flex;
@@ -19,7 +112,7 @@
             background: rgba(0, 212, 255, 0.1);
             border: 1px solid rgba(0, 212, 255, 0.3);
             border-radius: 6px;
-            color: #00d4ff;
+            color: #00d4ff !important;
             cursor: pointer;
             font-size: 0.9em;
             font-weight: 500;
@@ -50,6 +143,52 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            border-radius: 8px;
+            color: #00d4ff !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            color: #64748b !important;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,7 +200,7 @@
 
         <!-- Feature 1: AI Assistant -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">🤖</span> AI ASSISTANT</h2>
+            <h2 class="feature-title"><img src="assets/chat-screen.jpg" alt="AI Assistant" class="feature-icon"> AI ASSISTANT</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'ai-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'ai-es')">Español</button>
@@ -92,7 +231,7 @@
 
         <!-- Feature 2: Scan Business Card -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">📷</span> SCAN BUSINESS CARD</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Scan Card" class="feature-icon"> SCAN BUSINESS CARD</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'scan-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'scan-es')">Español</button>
@@ -123,7 +262,7 @@
 
         <!-- Feature 3: Scan QR Code -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">▣</span> SCAN QR CODE</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="QR Scanner" class="feature-icon"> SCAN QR CODE</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'qr-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'qr-es')">Español</button>
@@ -154,7 +293,7 @@
 
         <!-- Feature 4: My QR Code -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">◎</span> MY QR CODE</h2>
+            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="My QR Code" class="feature-icon"> MY QR CODE</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'myqr-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'myqr-es')">Español</button>
@@ -185,7 +324,7 @@
 
         <!-- Feature 5: Viewing & Editing -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">✎</span> VIEWING & EDITING CONTACTS</h2>
+            <h2 class="feature-title"><img src="assets/details.jpg" alt="View & Edit" class="feature-icon"> VIEWING & EDITING CONTACTS</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'edit-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'edit-es')">Español</button>
@@ -216,7 +355,7 @@
 
         <!-- Feature 6: Design Studio -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">🎨</span> DESIGN STUDIO</h2>
+            <h2 class="feature-title"><img src="assets/design-screen.jpg" alt="Design Studio" class="feature-icon"> DESIGN STUDIO</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'design-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'design-es')">Español</button>
@@ -247,7 +386,7 @@
 
         <!-- Feature 7: Search & Filter -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">🔍</span> SEARCH & FILTER</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Search" class="feature-icon"> SEARCH & FILTER</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'search-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'search-es')">Español</button>
@@ -278,7 +417,7 @@
 
         <!-- Feature 8: Sharing Contacts -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">📤</span> SHARING CONTACTS</h2>
+            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="Share" class="feature-icon"> SHARING CONTACTS</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'share-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'share-es')">Español</button>
@@ -309,7 +448,7 @@
 
         <!-- Feature 9: Data Management -->
         <div class="feature-card">
-            <h2 class="feature-title"><span class="feature-icon">💾</span> DATA MANAGEMENT</h2>
+            <h2 class="feature-title"><img src="assets/settings.jpg" alt="Settings" class="feature-icon"> DATA MANAGEMENT</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'data-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'data-es')">Español</button>
