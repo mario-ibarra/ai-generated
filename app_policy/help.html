@@ -86,11 +86,61 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid rgba(0, 212, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon:hover {
+            border-color: rgba(0, 212, 255, 0.8);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #00d4ff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
         }
 
         .feature-text {
@@ -200,7 +250,7 @@
 
         <!-- Feature 1: AI Assistant -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/chat-screen.jpg" alt="AI Assistant" class="feature-icon"> AI ASSISTANT</h2>
+            <h2 class="feature-title"><img src="assets/chat-screen.jpg" alt="AI Assistant" class="feature-icon" onclick="openLightbox('assets/chat-screen.jpg')"> AI ASSISTANT</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'ai-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'ai-es')">Español</button>
@@ -231,7 +281,7 @@
 
         <!-- Feature 2: Scan Business Card -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Scan Card" class="feature-icon"> SCAN BUSINESS CARD</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Scan Card" class="feature-icon" onclick="openLightbox('assets/contacts.jpg')"> SCAN BUSINESS CARD</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'scan-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'scan-es')">Español</button>
@@ -262,7 +312,7 @@
 
         <!-- Feature 3: Scan QR Code -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="QR Scanner" class="feature-icon"> SCAN QR CODE</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="QR Scanner" class="feature-icon" onclick="openLightbox('assets/contacts.jpg')"> SCAN QR CODE</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'qr-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'qr-es')">Español</button>
@@ -293,7 +343,7 @@
 
         <!-- Feature 4: My QR Code -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="My QR Code" class="feature-icon"> MY QR CODE</h2>
+            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="My QR Code" class="feature-icon" onclick="openLightbox('assets/preview-save-screen.jpg')"> MY QR CODE</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'myqr-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'myqr-es')">Español</button>
@@ -324,7 +374,7 @@
 
         <!-- Feature 5: Viewing & Editing -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/details.jpg" alt="View & Edit" class="feature-icon"> VIEWING & EDITING CONTACTS</h2>
+            <h2 class="feature-title"><img src="assets/details.jpg" alt="View & Edit" class="feature-icon" onclick="openLightbox('assets/details.jpg')"> VIEWING & EDITING CONTACTS</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'edit-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'edit-es')">Español</button>
@@ -355,7 +405,7 @@
 
         <!-- Feature 6: Design Studio -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/design-screen.jpg" alt="Design Studio" class="feature-icon"> DESIGN STUDIO</h2>
+            <h2 class="feature-title"><img src="assets/design-screen.jpg" alt="Design Studio" class="feature-icon" onclick="openLightbox('assets/design-screen.jpg')"> DESIGN STUDIO</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'design-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'design-es')">Español</button>
@@ -386,7 +436,7 @@
 
         <!-- Feature 7: Search & Filter -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Search" class="feature-icon"> SEARCH & FILTER</h2>
+            <h2 class="feature-title"><img src="assets/contacts.jpg" alt="Search" class="feature-icon" onclick="openLightbox('assets/contacts.jpg')"> SEARCH & FILTER</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'search-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'search-es')">Español</button>
@@ -417,7 +467,7 @@
 
         <!-- Feature 8: Sharing Contacts -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="Share" class="feature-icon"> SHARING CONTACTS</h2>
+            <h2 class="feature-title"><img src="assets/preview-save-screen.jpg" alt="Share" class="feature-icon" onclick="openLightbox('assets/preview-save-screen.jpg')"> SHARING CONTACTS</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'share-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'share-es')">Español</button>
@@ -448,7 +498,7 @@
 
         <!-- Feature 9: Data Management -->
         <div class="feature-card">
-            <h2 class="feature-title"><img src="assets/settings.jpg" alt="Settings" class="feature-icon"> DATA MANAGEMENT</h2>
+            <h2 class="feature-title"><img src="assets/settings.jpg" alt="Settings" class="feature-icon" onclick="openLightbox('assets/settings.jpg')"> DATA MANAGEMENT</h2>
             <div class="tabs">
                 <button class="tab-button active" onclick="showTab(event, 'data-en')">English</button>
                 <button class="tab-button" onclick="showTab(event, 'data-es')">Español</button>
@@ -484,29 +534,47 @@
         </div>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Screenshot">
+    </div>
+
     <script>
+        // Tab switching function
         function showTab(event, tabId) {
-            // Get the parent feature card
             const featureCard = event.target.closest('.feature-card');
-            
-            // Hide all tab contents in this feature card
             const tabContents = featureCard.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
                 content.classList.remove('active');
             });
-            
-            // Remove active class from all buttons in this feature card
             const tabButtons = featureCard.querySelectorAll('.tab-button');
             tabButtons.forEach(button => {
                 button.classList.remove('active');
             });
-            
-            // Show the selected tab content
             document.getElementById(tabId).classList.add('active');
-            
-            // Add active class to the clicked button
             event.target.classList.add('active');
         }
+
+        // Lightbox functions
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
     </script>
 </body>
 </html>
