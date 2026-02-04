@@ -90,6 +90,91 @@ a {
   text-decoration: underline;
 }
 
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main__nav {
+    display: none;
+    width: 100%;
+    order: 3;
+  }
+
+  .main__nav.active {
+    display: block;
+  }
+
+  .main__nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .main__nav li {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .main__nav a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .subheding {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo > img {
+    width: 40px;
+    padding: 8px;
+  }
+
+  .main__nav a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
 .subheding {
   font-size: 1.2rem;
   padding: 20px 0;

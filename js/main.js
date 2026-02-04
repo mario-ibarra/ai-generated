@@ -1,6 +1,26 @@
 
 document.addEventListener('contextmenu', (event) => event.preventDefault());
 
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  // Close menu when clicking on a link
+  const navLinks = mainNav.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+      menuToggle.classList.remove('active');
+    });
+  });
+}
+
 // Function to fetch image information from JSON file
 async function fetchImageInfo() {
   try {
